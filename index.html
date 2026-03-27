@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excelidraw</title>
+    <style>
+        body{
+            margin:0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        .container{
+            background:white;
+            padding:20px;
+            border-radius:15px;
+            box-shadow:0 10px 30px rgba(0,0,0,0.2);
+            text-align:center;
+        }
+
+        h1{
+            margin-bottom:10px;
+            color:#333;
+        }
+
+        canvas{
+            border-radius:10px;
+            border:2px solid #ddd;
+            cursor:crosshair;
+        }
+
+        .toolbar{
+            margin-top:15px;
+            display:flex;
+            flex-wrap:wrap;
+            gap:10px;
+            justify-content:center;
+        }
+
+        button{
+            padding:8px 14px;
+            border:none;
+            border-radius:8px;
+            background:#667eea;
+            color:white;
+            cursor:pointer;
+            transition:0.2s;
+        }
+
+        button:hover{
+            background:#5a67d8;
+            transform:scale(1.05);
+        }
+
+        .color{
+            height:30px;
+            width:30px;
+            border-radius:50%;
+            cursor:pointer;
+            border:2px solid white;
+            box-shadow:0 0 5px rgba(0,0,0,0.3);
+        }
+
+        .colors{
+            display:flex;
+            align-items:center;
+            gap:6px;
+        }
+
+        input[type="range"]{
+            cursor:pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Excelidraw</h1>
+
+    <canvas id="canvas"></canvas>
+
+    <div class="toolbar">
+        <button id="clear">Clear</button>
+        <button id="undo">Undo</button>
+        <button id="redo">Redo</button>
+
+
+        <input type="range" id="volume" min="1" max="15">
+
+        <div class="colors">
+            <div id="red" class="color" style="background:red;"></div>
+            <div id="blue" class="color" style="background:blue;"></div>
+            <div id="green" class="color" style="background:green;"></div>
+            <input id="color-picker" type="color">
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
